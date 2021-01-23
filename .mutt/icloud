@@ -1,0 +1,14 @@
+set imap_user = ''
+set imap_pass = ''
+set imap_pipeline_depth=0
+set from="user"@icloud.com"
+set use_from=yes
+set folder = "imaps://user@imap.mail.me.com:993"
+set spoolfile = "+INBOX"
+set postponed="+Drafts"
+set mail_check = 100
+set smtp_url = "smtp://user@smtp.mail.me.com:587"
+set smtp_pass = $imap_pass
+set move = no
+set imap_keepalive = 900
+set record="+Sent"
