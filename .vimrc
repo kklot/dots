@@ -33,6 +33,10 @@ syntax on
 let R_in_buffer=0
 let R_assign=2 "type twice to replace R's assignment symbols, not one
 nmap <LocalLeader>: :RSend 
+nmap <LocalLeader>w yiw:RSend "<CR>
+nmap <LocalLeader>sp yiw:RSend plot(")<CR>
+nmap <LocalLeader>sm yiw:RSend matplot(")<CR>
+nmap <LocalLeader>si yiw:RSend image(")<CR>
 nmap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 call plug#begin('~/.vim/plugged')
 Plug 'jalvesaq/nvim-r'
