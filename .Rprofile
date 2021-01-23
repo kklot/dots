@@ -1,0 +1,5 @@
+options(help_type="html", repos=structure(c(CRAN='https://cran.ma.imperial.ac.uk/')))
+pkgs <-c("ggplot2", "devtools", "roxygen2")
+sapply(pkgs, library, character.only=TRUE)
+theme_set(theme_minimal())
+library(colorout)
