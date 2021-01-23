@@ -1,0 +1,61 @@
+set help=no
+set wrap=79
+set status_format=""
+set sort="threads"
+# server
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set timeout=30
+
+folder-hook 'imperial' 'source ~/.mutt/imperial'
+folder-hook 'gmail' 'source ~/.mutt/gmail'
+folder-hook 'icloud' 'source ~/.mutt/icloud'
+# switch to default account on startup
+source ~/.mutt/imperial
+
+set mail_check = 100
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+set move = no
+set imap_keepalive = 900
+#set record="+Sent"
+
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/imperial<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/gmail<enter><change-folder>!<enter>'
+macro index <f4> '<sync-mailbox><enter-command>source ~/.mutt/icloud<enter><change-folder>!<enter>'
+
+# render html email
+set mailcap_path = ~/.mutt/mailcap
+auto_view text/calendar text/html
+alternative_order text/plain text/enriched text/calendar text/html 
+# Remove render messages from body
+set display_filter=fitler
+
+# remove + signs
+unset markers
+
+# add some keyboard to read email  by lines (vi's key) 
+bind pager j  next-line
+bind pager k  previous-line
+bind pager /  search
+bind pager gg top
+bind pager G  bottom
+
+# colorize
+# https://draculatheme.com/mutt/
+source ~/.mutt/dracula.muttrc
+
+# contacts autocompletes (with abook)
+set query_command = "abook --datafile ~/.abook/addressbook --mutt-query '%s'"
+bind editor <Tab> complete-query
+macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
+
+# side bar
+set sidebar_width=38
+set sidebar_visible=no
+set pager_index_lines=5
+
+# Ignore long list of cc in Imperial....
+ignore * # subject is showed at status bar/lines already
+unignore to cc
