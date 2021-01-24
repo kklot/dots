@@ -20,6 +20,10 @@ let maplocalleader = ' '
 noremap <F2> <Esc>:ls <Enter>:b
 noremap <F5> <Esc>:e %<Enter>
 noremap <Backspace> <Esc>kJi
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
 inoremap { {<CR>}<Esc>ko
 inoremap ( ()<Esc>ha
 inoremap ' ''<Esc>ha
