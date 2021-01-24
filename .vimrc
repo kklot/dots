@@ -26,6 +26,7 @@ noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l
 inoremap { {<CR>}<Esc>ko
 inoremap ( ()<Esc>ha
+inoremap [ []<Esc>ha
 inoremap ' ''<Esc>ha
 inoremap " ""<Esc>ha
 autocmd FileType md nnoremap <buffer>  ai
