@@ -17,7 +17,7 @@ set autochdir
 set hidden " switch buffer without save
 set rtp+=/usr/local/opt/fzf
 let maplocalleader = ' '
-noremap <F2> <Esc>:ls <Enter>:b
+noremap <F2> <Esc>:ls <Enter>:b 
 noremap <F5> <Esc>:e %<Enter>
 noremap <Backspace> <Esc>kJi
 noremap <C-j> <C-w>j
