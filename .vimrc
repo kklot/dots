@@ -16,6 +16,8 @@ set hlsearch
 set autochdir
 set hidden " switch buffer without save
 set rtp+=/usr/local/opt/fzf
+" Nvim-R stuffs
+let R_debug=0
 let maplocalleader = ' '
 noremap <F2> <Esc>:ls <Enter>:b 
 noremap <F5> <Esc>:e %<Enter>
