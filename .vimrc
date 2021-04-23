@@ -1,8 +1,12 @@
-colorscheme monokai
+syntax on
+colorscheme solarized
+hi Normal guibg=NONE ctermbg=NONE
 hi TabLineFill ctermfg=LightGreen ctermbg=DarkGreen
 hi TabLine ctermfg=Blue ctermbg=Yellow
 hi TabLineSel ctermfg=Red ctermbg=Yellow
-set background=dark
+hi VertSplit guibg=NONE ctermbg=NONE
+hi GitGutterAdd ctermbg=NONE
+hi GitGutterChange ctermbg=NONE
 set tags=~/tags
 set number relativenumber
 set tabstop=2
@@ -37,7 +41,6 @@ autocmd BufRead *.* set path+=
 autocmd FileType r inoremap <buffer> >> <Esc>:normal! a %>%<CR>a 
 autocmd FileType rnoweb inoremap <buffer> >> <Esc>:normal! a %>%<CR>a 
 autocmd FileType rmd inoremap <buffer> >> <Esc>:normal! a %>%<CR>a 
-syntax on
 let R_in_buffer=0
 let R_assign=2 "type twice to replace R's assignment symbols, not one
 nnoremap <LocalLeader>sc :RSend 
