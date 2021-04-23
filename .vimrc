@@ -40,11 +40,13 @@ autocmd FileType rmd inoremap <buffer> >> <Esc>:normal! a %>%<CR>a
 syntax on
 let R_in_buffer=0
 let R_assign=2 "type twice to replace R's assignment symbols, not one
-nmap <LocalLeader>: :RSend 
-nmap <LocalLeader>w yiw:RSend "<CR>
-nmap <LocalLeader>sp yiw:RSend plot(")<CR>
-nmap <LocalLeader>sm yiw:RSend matplot(")<CR>
-nmap <LocalLeader>si yiw:RSend image(")<CR>
+nnoremap <LocalLeader>sc :RSend 
+nnoremap <LocalLeader>aw yiw:RSend "<CR>
+nnoremap <LocalLeader>ib yib:RSend "<CR>
+nnoremap <LocalLeader>q :RSend Q<CR>
+nnoremap <LocalLeader>gp yiw:RSend plot(")<CR>
+nnoremap <LocalLeader>gm yiw:RSend matplot(", type='l')<CR>
+nnoremap <LocalLeader>gi yiw:RSend image(")<CR>
 nmap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 call plug#begin('~/.vim/plugged')
 Plug 'jalvesaq/nvim-r'
