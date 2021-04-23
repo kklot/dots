@@ -63,3 +63,9 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'godlygeek/tabular'
 call plug#end()
 
+function! OpenInTab()
+	let curpos = getpos('.')
+	tabedit %
+	call cursor(curpos[1], curpos[2])
+endfunction
+nnoremap <LocalLeader>z :call OpenInTab()<Enter>
