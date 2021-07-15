@@ -1,25 +1,15 @@
-MY_LOC   =  /usr/local/clang8
-CML_LOC  =  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
-# CC       =  ccache $(MY_LOC)/bin/clang -isysroot $(CML_LOC)
-# CXX      =  ccache $(MY_LOC)/bin/clang++ -isysroot $(CML_LOC)
-CC       =  ccache $(MY_LOC)/bin/clang -fopenmp -isysroot $(CML_LOC)
-CXX      =  ccache $(MY_LOC)/bin/clang++ -fopenmp -isysroot $(CML_LOC)
-# CXXFLAGS = -O0
-  CFLAGS = -DNDEBUG -O3 -Wall -pedantic -std=gnu99 -mtune=native -pipe
-CXXFLAGS = -DNDEBUG -O3 -Wall -pedantic -std=c++11 -mtune=native -pipe
-LDFLAGS  = -L$(MY_LOC)/lib -Wl,-rpath,$(MY_LOC)/lib
+FLIBS=-L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin20/10.2.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm
+CXX1X=/usr/local/gfortran/bin/g++
+CXX98=/usr/local/gfortran/bin/g++
+CXX11=/usr/local/gfortran/bin/g++
+CXX14=/usr/local/gfortran/bin/g++
+CXX17=/usr/local/gfortran/bin/g++
 
-#CPPFLAGS += -Xclang -fopenmp
-#LDFLAGS += -lomp
-
-# CXXFLAGS=-O3 -mtune=native -march=native -Wno-macro-redefined -Wno-unused-variable -Wno-unused-function -Wno-unused-local-typedefs -Wno-unknown-pragmas -Wno-c++11-inline-namespace
-# CXX14FLAGS=-O3 -mtune=native -march=native -Wall -Wno-unused-variable -Wno-unused-function -Wno-unknown-pragmas -Wno-c++11-inline-namespace
-
-# CC = ccache clang -Qunused-arguments
-
-# CXX14 =        clang++ -arch x86_64 -ftemplate-depth-256 -std=c++1y
-# CXX14 = ccache clang++ -arch x86_64 -ftemplate-depth-256 -std=c++1y
-
-# CCACHE_CPP2=yes
-# CXX = clang++ -std=c++14
-# CXX =        clang++ -std=c++14
+LLVM_LOC=/usr/local/opt/llvm
+MAC_LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+CC=/usr/local/gfortran/bin/gcc -fopenmp
+CXX=/usr/local/gfortran/bin/g++ -fopenmp
+CFLAGS=-g -O3 -Wall -pedantic -std=gnu99 -mtune=native -pipe
+CXXFLAGS=-g -O3 -Wall -pedantic -std=c++11 -mtune=native -pipe
+LDFLAGS=-L/usr/local/opt/gettext/lib -L$(LLVM_LOC)/lib -Wl,-rpath,$(LLVM_LOC)/lib
+CPPFLAGS=-I/usr/local/opt/gettext/include -I$(LLVM_LOC)/include -I$(MAC_LOC)
