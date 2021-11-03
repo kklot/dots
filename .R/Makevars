@@ -10,6 +10,6 @@ MAC_LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
 CC=/usr/local/gfortran/bin/gcc -fopenmp
 CXX=/usr/local/gfortran/bin/g++ -fopenmp
 CFLAGS=-g -O3 -Wall -pedantic -std=gnu99 -mtune=native -pipe
-CXXFLAGS=-g -O3 -Wall -pedantic -std=c++11 -mtune=native -pipe
+CXXFLAGS=-g -O3 -Wall -pedantic -std=c++11 -mtune=native -pipe -Wno-ignored-attributes -Wno-maybe-uninitialized
 LDFLAGS=-L/usr/local/opt/gettext/lib -L$(LLVM_LOC)/lib -Wl,-rpath,$(LLVM_LOC)/lib
 CPPFLAGS=-I/usr/local/opt/gettext/include -I$(LLVM_LOC)/include -I$(MAC_LOC)
