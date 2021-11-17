@@ -10,6 +10,12 @@ hi TabLineSel ctermfg=Red ctermbg=Yellow
 hi VertSplit guibg=NONE ctermbg=NONE
 hi GitGutterAdd ctermbg=NONE
 hi GitGutterChange ctermbg=NONE
+" customize fold
+set foldenable
+" remove underline in fold
+hi Folded term=NONE cterm=NONE ctermbg=NONE
+" remove also the character on the right
+set fillchars=fold:\ 
 set tags=~/tags
 set number relativenumber
 set tabstop=2
