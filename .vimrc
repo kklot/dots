@@ -16,6 +16,18 @@ set foldenable
 hi Folded term=NONE cterm=NONE ctermbg=NONE
 " remove also the character on the right
 set fillchars=fold:\ 
+"Change theme depending on the time of day
+" let hr = (strftime('%H'))
+" if hr >= 19
+" 	set background=dark
+" elseif hr >= 8
+" 	set background=light
+" elseif hr >= 0
+" 	set background=dark
+" endif
+" solarized option
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
 set tags=~/tags
 set number relativenumber
 set tabstop=2
