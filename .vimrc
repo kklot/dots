@@ -72,3 +72,12 @@ function! OpenInTab()
 	call cursor(curpos[1], curpos[2])
 endfunction
 nnoremap <LocalLeader>z :call OpenInTab()<Enter>
+
+" Snippets
+let R_rmdchunk = 0
+iabbrev rchunk ```{r}<CR>```<Esc>O
+iabbrev imagechunk ```{r include=FALSE}<CR>```<Esc>O
+iabbrev tablechunk ```{r include=FALSE, results="asis"}<CR>```<Esc>O
+iabbrev silentchunk ```{r include=FALSE, message=FALSE, warning=FALSE}<CR>```<Esc>O
+iabbrev splitchunk ```<CR>```{r}<Esc>O<Esc>o
+iabbrev gg <Esc>oggplot() +<CR>geom_line(aes(x))<Esc>Fxcib
