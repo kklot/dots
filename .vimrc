@@ -1,6 +1,7 @@
 syntax on
 set splitright
 set splitbelow
+set autoread
 colorscheme solarized
 hi Normal guibg=NONE ctermbg=NONE
 hi TabLineFill ctermfg=LightGreen ctermbg=DarkGreen
