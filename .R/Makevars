@@ -6,7 +6,7 @@ CXX14=/usr/local/gfortran/bin/g++
 CXX17=/usr/local/gfortran/bin/g++
 
 LLVM_LOC=/usr/local/opt/llvm
-MAC_LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+MAC_LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk/usr/include
 CC=/usr/local/gfortran/bin/gcc -fopenmp
 CXX=/usr/local/gfortran/bin/g++ -fopenmp
 CFLAGS=-g -O3 -Wall -pedantic -std=gnu99 -mtune=native -pipe
